@@ -1,0 +1,31 @@
+<!DOCTYPE html
+	  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <body>
+    <form method="post" id="userQueryForm">
+      <div>
+	<label>
+	  Switch query
+	</label>
+	<select name="select_query" onchange="javascript:location.href=this.value;">
+	  <option 
+	     value="${empty_url}"
+	     selected="${current_report_id == -1 and 'selected' or None}">
+	    (Unsaved)
+	  </option>
+	  <optgroup label="User">
+	  </optgroup>
+	  <optgroup label="Project">
+	    <option py:for="savedquery in project_queries" 
+		    value="${savedquery.url}" 
+		    selected="${current_report_id == savedquery.id and 'selected' or None}"
+		    py:content="savedquery['name']"/>
+	  </optgroup>
+	</select>
+      </div>
+    </form>
+  </body>
+</html>

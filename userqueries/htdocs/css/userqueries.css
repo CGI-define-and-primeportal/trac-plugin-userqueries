@@ -1,0 +1,10 @@
+
+form#userQueryForm {
+ text-align: right;
+ padding: 5px;
+}
+
+#userQueryForm label {
+ color: grey;
+ font-size: 10px;
+}
