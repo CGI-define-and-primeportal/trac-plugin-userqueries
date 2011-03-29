@@ -42,7 +42,7 @@ class LogicaReportModule(ReportModule):
         from trac.ticket.query import QueryModule
         if 'TICKET_VIEW' in req.perm and \
                 self.env.is_component_enabled(QueryModule):
-            add_ctxtnav(req, _('Custom Query'), href=req.href.query())
+            add_ctxtnav(req, tag.a(_("Custom Query"), href=req.href.query(), class_='query'))
             data['query_href'] = req.href.query()
         else:
             data['query_href'] = None
