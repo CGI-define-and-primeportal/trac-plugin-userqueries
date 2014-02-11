@@ -45,7 +45,6 @@ class UserQueriesModule(Component):
     def _generate_form(self, req, data):
         userQueryData = dict(data)
 
-        userQueryData['project_queries']=[]
         userQueryData['user_queries']   =[]
 
         userQueryData['empty_url']      = req.href.report()
@@ -71,10 +70,9 @@ class UserQueriesModule(Component):
         db = self.env.get_db_cnx()
         cursor = db.cursor()
         cursor.execute("SELECT id AS report, title FROM report ORDER BY report")
-        for id, title in cursor:
-            userQueryData['project_queries'].append({'url': req.href.report(id),
-                                                     'id': id,
-                                                     'name': title})
+        userQueryData['project_queries'] = [{'url': req.href.report(id),
+                                             'id': id, 'name': title}
+                                            for id, title in cursor]
 
         stream = Chrome(self.env).render_template(req, 'userqueries.html',
               userQueryData, fragment=True)
