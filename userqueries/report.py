@@ -1,5 +1,5 @@
 from trac.ticket.report import ReportModule
-from trac.web.chrome import add_stylesheet, add_ctxtnav, Chrome, tag
+from trac.web.chrome import add_stylesheet, add_ctxtnav, Chrome
 from trac.util.translation import _
 
 class LogicaReportModule(ReportModule):

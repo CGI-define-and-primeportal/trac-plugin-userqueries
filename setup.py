@@ -3,7 +3,7 @@
 # Copyright (C) 2010 Logica
 
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 PACKAGE = 'UserQueriesPlugin'
 VERSION = '0.0.0'

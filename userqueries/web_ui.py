@@ -2,8 +2,12 @@
 # Copyright (C) 2010 Logica
 
 from trac.core import *
+from trac.perm import IPermissionRequestor        
+from trac.ticket import TicketSystem, Ticket
+from trac.ticket.query import QueryModule
 from trac.web.api import ITemplateStreamFilter
 from trac.web.chrome import ITemplateProvider, Chrome, add_stylesheet
+from trac.web.main import IRequestFilter
 from genshi.filters.transform import Transformer
 from pkg_resources import resource_filename
 
