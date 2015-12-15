@@ -12,6 +12,7 @@ setup(
     name=PACKAGE, version=VERSION,
     description='Allows users to save their own queries privately',
     author="Nick Piper", author_email="nick.piper@logica.com",
+    license='BSD',    
     url='http://trac.uk.logica.com/',
     packages = ['userqueries'],
     package_data={
